@@ -1,16 +1,18 @@
 # KursorX
 
-Mała aplikacja Win32 (C++17) do zmiany kursora myszy.
+Aplikacja Win32 (C++17, GDI+ / Media Foundation) z nowoczesnym ciemnym interfejsem.
 
-- wybierasz plik `.cur` lub `.ani` (przycisk lub przeciągnij i upuść),
-- widzisz powiększony podgląd (animowane kursory są animowane),
-- wybierasz rolę kursora (strzałka, ręka, I-beam…) i klikasz **Ustaw**,
-- **Domyślny** przywraca domyślny kursor (jednej roli albo wszystkich).
+**Kursor** – wybierasz `.cur` / `.ani` (przycisk lub przeciągnięcie), widzisz podgląd z animacją
+(z prawdziwym czasem klatek) i punktem aktywnym, wskazujesz rolę kursora i klikasz *Ustaw*.
+*Przywróć domyślny* czyści wpisy i wraca do kursorów Windows.
 
-Plik jest kopiowany do `%APPDATA%\KursorX`, a ścieżka trafia do `HKCU\Control Panel\Cursors`, więc zmiana przetrwa restart.
+**Tapeta** – film (MP4/MOV/WMV/AVI…), GIF lub obraz jako żywe tło pulpitu, na każdym monitorze,
+za ikonami. Tryby dopasowania, wyciszanie, auto-pauza w grach/pełnym ekranie. Aplikacja działa
+w zasobniku, może startować z Windows i sama wznawiać tapetę.
+
+Kursory są kopiowane do `%APPDATA%\KursorX`, a ścieżki zapisywane w `HKCU\Control Panel\Cursors`.
 
 ## Budowanie
 
-    cmake -B build && cmake --build build --config Release
-
-(MSVC albo MinGW; na Linuksie: `-DCMAKE_TOOLCHAIN_FILE` dla `x86_64-w64-mingw32`.)
+    ./build.sh                       # MinGW-w64 -> build/KursorX.exe
+    cmake -B build && cmake --build build --config Release   # MSVC / MinGW
